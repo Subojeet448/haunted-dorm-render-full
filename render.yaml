@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: haunted-dorm
+    runtime: docker
+    plan: free
+    region: singapore        # India ke liye sabse paas; apne players ke hisaab se badlo
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: GHOST_SPAWN_AT
+        value: "30"
+      - key: TIME_LIMIT
+        value: "1500"
+      - key: GHOST_DMG_MULT
+        value: "1"
+      - key: KEEPALIVE_MIN
+        value: "10"
